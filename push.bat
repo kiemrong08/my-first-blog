@@ -1,4 +1,4 @@
-#ECHO OFF
+@ECHO OFF
 git status
 git add -A .
 git status
