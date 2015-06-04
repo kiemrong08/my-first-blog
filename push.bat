@@ -1,11 +1,11 @@
-@ECHO OFF
+﻿@ECHO OFF
 git status
 @PAUSE
 git add -A .
 @PAUSE
 git status
 @PAUSE
-git commit -m "Added views to create/edit blog post inside the site."
+git commit -m "Thêm view để cho nó có"
 @PAUSE
 git push
 @PAUSE
