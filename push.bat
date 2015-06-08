@@ -1,4 +1,4 @@
-﻿git status
+git status
 
 git add -A .
 
