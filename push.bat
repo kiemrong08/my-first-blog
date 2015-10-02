@@ -5,6 +5,6 @@ git add -A .
 
 git status
 
-git commit -m "Thay doi o file bat de upload nhanh hon"
+git commit -m "Them rango"
 
 git push
