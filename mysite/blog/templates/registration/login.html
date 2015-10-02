@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<p><b><font size="3" color="red">Tài khoản và mật khẩu không đúng. Hãy thử lại</font></b></p>
 {% endif %}
 
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
@@ -18,8 +18,8 @@
     <td>{{ form.password }}</td>
 </tr>
 </table>
-
-<input type="submit" value="login" />
+<br>
+<input type="submit" value="Đăng nhập" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 

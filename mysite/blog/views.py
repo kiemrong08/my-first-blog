@@ -56,7 +56,6 @@ def post_remove(request, pk):
     post.delete()
     return redirect('blog.views.post_list')
 
-
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":

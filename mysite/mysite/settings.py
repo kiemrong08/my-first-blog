@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'rango',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,7 +101,24 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+#Quân thêm:
+#PROJECT_DIR = os.path.dirname()
 
+#Quân thêm:
+STATIC_PATH = os.path.join(BASE_DIR,'static')
+#DUONG_DAN_PATH = sys.path.insert(0, os.path.join(BASE_DIR, 'rango'))
+STATICFILES_DIRS = (
+   #os.path.join(BASE_DIR,'static'),
+   STATIC_PATH,
+#   DUONG_DAN_PATH,
+#    'D:/03. Python/djangogirls/mysite/rango/static',
+)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_FINDERS = (
+#    'django.contrib.staticfiles.finders.FileSystemFinder',
+#    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#)
+
 LOGIN_REDIRECT_URL = '/'
