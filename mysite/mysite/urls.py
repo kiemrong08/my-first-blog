@@ -1,6 +1,11 @@
-from django.conf.urls import include, url
+from django.conf.urls import include
+from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import patterns
 admin.autodiscover()
+
 
 urlpatterns = [
     # Examples:
@@ -13,3 +18,13 @@ urlpatterns = [
     url(r'', include('blog.urls')),
     url(r'^rango/',include('rango.urls')),
 ]
+
+if settings.DEBUG:
+	urlpatterns +=patterns(
+		'django.views.static',
+		(r'^media/(?P<path>.*)',
+		'serve',
+		{'document_root': settings.MEDIA_ROOT}), )
+
+if not settings.DEBUG:
+	urlpatterns +=static(settings.SATIC_URL, document_root=settings.SATIC_ROOT)

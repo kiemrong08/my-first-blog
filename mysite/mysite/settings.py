@@ -15,8 +15,8 @@ import os
 import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
+TEMPLATE_PATH=os.path.join(BASE_DIR,'templates') #quân thêm
+STATIC_RANGO=os.path.join(BASE_DIR,'rango','static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #quân thêm
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,19 +106,22 @@ USE_TZ = True
 
 #Quân thêm:
 STATIC_PATH = os.path.join(BASE_DIR,'static')
+STATIC_URL = '/static/'
+#STATIC_URL=('/rango/static/')
 #DUONG_DAN_PATH = sys.path.insert(0, os.path.join(BASE_DIR, 'rango'))
 STATICFILES_DIRS = (
    #os.path.join(BASE_DIR,'static'),
-   STATIC_PATH,
-#   DUONG_DAN_PATH,
+    STATIC_PATH,
+    STATIC_RANGO,
 #    'D:/03. Python/djangogirls/mysite/rango/static',
 )
-STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_FINDERS = (
-#    'django.contrib.staticfiles.finders.FileSystemFinder',
-#    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
-#)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 LOGIN_REDIRECT_URL = '/'
+MEDIA_URL='/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media') #đường dẫn tuyệt đối đến thư mục media
