@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 {% load staticfiles %} <!-- New line -->
 <html>
-
 	<head>
 		<title>Rango</title>
 	</head>
-
 	<body>
-		<h1>Rango says...</h1>
-		hello world! <strong>{{ boldmessage }}</strong><br />
-		<a href="/rango/about/">About</a><br />
+		<h1>TIỂU SỬ RANGO ...</h1>
+		Xin chào các bạn... <strong>{{ boldmessage }}</strong><br />
+		<a href="/rango/about/">Vào trang about</a><br />
+		<a href="/rango/aboutphu/">Ảnh gà con</a><br />
 		<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
 		<img src="{% static "images/rango1.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
 	</body>
