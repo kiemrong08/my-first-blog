@@ -6,11 +6,22 @@
 	</head>
 	<body>
 		<h1>TIỂU SỬ RANGO ...</h1>
+
+		{% if categories %}
+			<ul>
+				{% for category in categories %}
+				<li>{{ category.name }}</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<strong> Không có thư mục nào được biểu diễn </strong>
+		{% endif %}
+
 		Xin chào các bạn... <strong>{{ boldmessage }}</strong><br />
 		<a href="/rango/about/">Vào trang about</a><br />
 		<a href="/rango/aboutphu/">Ảnh gà con</a><br />
 		<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
-		<img src="{% static "images/rango1.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
+		<img src="{% static "images1/rango1.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
 	</body>
 
 </html>
