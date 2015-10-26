@@ -5,6 +5,6 @@ git add -A .
 
 git status
 
-git commit -m "Them rango"
+git commit -m "Thêm Slug Field"
 
 git push
